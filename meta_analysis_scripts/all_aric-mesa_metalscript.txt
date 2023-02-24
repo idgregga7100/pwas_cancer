@@ -1,0 +1,85 @@
+#metal script to run analysis for ARIC studies
+
+MARKER SeqId
+ALLELE A1 A2  
+PVALUE TWAS.P
+EFFECT TWAS.Z
+WEIGHTLABEL NSNP 
+PROCESS ARIC_discovery_breast.txt
+PROCESS ARIC_replication_breast.txt
+
+MARKER SeqId.x
+ALLELE A1 A2  
+PVALUE pvalue
+EFFECT zscore
+WEIGHTLABEL n_snps_used 
+PROCESS TOPMed_discovery_breast.txt
+PROCESS TOPMed_replication_breast.txt
+
+OUT METAL_ARIC-MESA_disc-rep_breast .tbl
+ANALYZE
+
+CLEAR
+
+MARKER SeqId
+ALLELE A1 A2  
+PVALUE TWAS.P
+EFFECT TWAS.Z
+WEIGHTLABEL NSNP 
+PROCESS ARIC_discovery_endo.txt
+PROCESS ARIC_replication_endom.txt
+
+MARKER SeqId.x
+ALLELE A1 A2
+PVALUE pvalue
+EFFECT zscore
+WEIGHTLABEL n_snps_used
+PROCESS TOPMed_discovery_endo.txt
+PROCESS TOPMed_replication_endom.txt
+
+OUT METAL_ARIC-MESA_disc-rep_endo .tbl
+ANALYZE
+
+CLEAR
+
+MARKER SeqId
+ALLELE A1 A2  
+PVALUE TWAS.P
+EFFECT TWAS.Z
+WEIGHTLABEL NSNP 
+PROCESS ARIC_discovery_ovary.txt
+PROCESS ARIC_replication_ovary.txt
+
+MARKER SeqId.x
+ALLELE A1 A2
+PVALUE pvalue
+EFFECT zscore
+WEIGHTLABEL n_snps_used
+PROCESS TOPMed_discovery_ovary.txt
+PROCESS TOPMed_replication_ovary.txt
+
+OUT METAL_ARIC-MESA_disc-rep_oravy .tbl
+ANALYZE
+
+CLEAR
+
+MARKER SeqId
+ALLELE A1 A2  
+PVALUE TWAS.P
+EFFECT TWAS.Z
+WEIGHTLABEL NSNP 
+PROCESS ARIC_discovery_prostate.txt
+PROCESS ARIC_replication_prostate.txt
+
+MARKER SeqId.x
+ALLELE A1 A2
+PVALUE pvalue
+EFFECT zscore
+WEIGHTLABEL n_snps_used
+PROCESS TOPMed_discovery_prostate.txt
+PROCESS TOPMed_replication_prostate.txt
+
+OUT METAL_ARIC-MESA_disc-rep_prostate .tbl
+ANALYZE
+
+CLEAR
